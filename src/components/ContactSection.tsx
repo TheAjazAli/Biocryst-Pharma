@@ -216,7 +216,7 @@ const ContactSection = () => {
             <CardContent className="p-0">
               <div className="h-64 md:h-80 rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.4473684570525!2d-71.06035668455236!3d42.35842597918671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3708b72fa5563%3A0xfb5b2f8d9d5b1a1a!2sBoston%2C%20MA%2C%20USA!5e0!3m2!1sen!2sus!4v1649876543210!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120726.33744706571!2d73.03195504429985!3d18.988938318600884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e83e1f23f23d%3A0xe3a106c431e3fd0a!2sPanvel%2C%20Navi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1754061447856!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
