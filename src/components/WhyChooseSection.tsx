@@ -7,7 +7,10 @@ import {
   Microscope, 
   Globe,
   Heart,
-  CheckCircle
+  CheckCircle,
+  Zap,
+  Target,
+  Cpu
 } from "lucide-react";
 
 const WhyChooseSection = () => {
@@ -16,37 +19,43 @@ const WhyChooseSection = () => {
       icon: Shield,
       title: "FDA Approved",
       description: "All our products meet stringent FDA regulations and international quality standards",
-      color: "text-primary"
+      color: "text-primary",
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
-      icon: Award,
+      icon: Zap,
       title: "Award-Winning Research",
       description: "Recognized globally for breakthrough innovations in pharmaceutical development",
-      color: "text-accent"
+      color: "text-accent",
+      gradient: "from-emerald-500 to-teal-500"
     },
     {
-      icon: Clock,
+      icon: Target,
       title: "25+ Years Experience",
       description: "Decades of expertise in pharmaceutical research, development, and manufacturing",
-      color: "text-primary"
+      color: "text-primary",
+      gradient: "from-violet-500 to-purple-500"
     },
     {
       icon: Users,
       title: "Expert Team",
       description: "Leading scientists, researchers, and medical professionals driving innovation",
-      color: "text-accent"
+      color: "text-accent",
+      gradient: "from-orange-500 to-red-500"
     },
     {
-      icon: Microscope,
+      icon: Cpu,
       title: "Advanced R&D",
       description: "State-of-the-art laboratories and cutting-edge research methodologies",
-      color: "text-primary"
+      color: "text-primary",
+      gradient: "from-pink-500 to-rose-500"
     },
     {
       icon: Globe,
       title: "Global Reach",
       description: "Serving healthcare providers and patients across 50+ countries worldwide",
-      color: "text-accent"
+      color: "text-accent",
+      gradient: "from-indigo-500 to-blue-500"
     }
   ];
 

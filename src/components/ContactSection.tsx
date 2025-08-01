@@ -211,18 +211,21 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Map Placeholder */}
+          {/* Google Map Embed */}
           <Card className="mb-16 animate-fade-in">
             <CardContent className="p-0">
-              <div className="h-64 md:h-80 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg flex items-center justify-center relative overflow-hidden">
-                <div className="text-center z-10">
-                  <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Interactive Map</h3>
-                  <p className="text-muted-foreground">
-                    Find our global offices and facilities
-                  </p>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
+              <div className="h-64 md:h-80 rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.4473684570525!2d-71.06035668455236!3d42.35842597918671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3708b72fa5563%3A0xfb5b2f8d9d5b1a1a!2sBoston%2C%20MA%2C%20USA!5e0!3m2!1sen!2sus!4v1649876543210!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Biocryst Pharma Headquarters Location"
+                  className="rounded-lg"
+                ></iframe>
               </div>
             </CardContent>
           </Card>

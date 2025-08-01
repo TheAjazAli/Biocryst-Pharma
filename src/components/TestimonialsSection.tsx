@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Quote, Stethoscope, Shield, Award, Users } from "lucide-react";
+import { useCountUp } from "@/hooks/useCountUp";
 
 const TestimonialsSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const testimonials = [
     {
@@ -57,6 +59,27 @@ const TestimonialsSection = () => {
     setCurrentSlide(index);
   };
 
+  // Auto-play functionality
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, testimonials.length]);
+
+  // Pause auto-play on hover
+  const handleMouseEnter = () => setIsAutoPlaying(false);
+  const handleMouseLeave = () => setIsAutoPlaying(true);
+
+  // Count up hooks for stats
+  const satisfactionCount = useCountUp({ end: 98, duration: 2500 });
+  const partnersCount = useCountUp({ end: 500, duration: 3000, delay: 200 });
+  const patientsCount = useCountUp({ end: 50, duration: 2800, delay: 400 });
+  const countriesCount = useCountUp({ end: 25, duration: 2200, delay: 600 });
+
   return (
     <section id="testimonials" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
@@ -73,7 +96,11 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Testimonials Carousel */}
-          <div className="relative">
+          <div 
+            className="relative" 
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <div className="overflow-hidden rounded-2xl">
               <div 
                 className="flex transition-transform duration-500 ease-in-out"
@@ -158,23 +185,43 @@ const TestimonialsSection = () => {
             ))}
           </div>
 
-          {/* Stats */}
+          {/* Stats with count animation */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-border">
-            <div className="text-center animate-scale-in">
-              <h3 className="text-3xl font-bold text-primary mb-2">98%</h3>
-              <p className="text-muted-foreground">Satisfaction Rate</p>
+            <div className="text-center animate-scale-in group hover:scale-105 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="h-8 w-8 text-primary-foreground" />
+              </div>
+              <h3 ref={satisfactionCount.ref} className="text-3xl font-bold text-primary mb-2 font-sf-pro">
+                {satisfactionCount.count}%
+              </h3>
+              <p className="text-muted-foreground font-medium">Satisfaction Rate</p>
             </div>
-            <div className="text-center animate-scale-in">
-              <h3 className="text-3xl font-bold text-primary mb-2">500+</h3>
-              <p className="text-muted-foreground">Healthcare Partners</p>
+            <div className="text-center animate-scale-in group hover:scale-105 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-primary-foreground" />
+              </div>
+              <h3 ref={partnersCount.ref} className="text-3xl font-bold text-primary mb-2 font-sf-pro">
+                {partnersCount.count}+
+              </h3>
+              <p className="text-muted-foreground font-medium">Healthcare Partners</p>
             </div>
-            <div className="text-center animate-scale-in">
-              <h3 className="text-3xl font-bold text-primary mb-2">50M+</h3>
-              <p className="text-muted-foreground">Patients Served</p>
+            <div className="text-center animate-scale-in group hover:scale-105 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Stethoscope className="h-8 w-8 text-primary-foreground" />
+              </div>
+              <h3 ref={patientsCount.ref} className="text-3xl font-bold text-primary mb-2 font-sf-pro">
+                {patientsCount.count}M+
+              </h3>
+              <p className="text-muted-foreground font-medium">Patients Served</p>
             </div>
-            <div className="text-center animate-scale-in">
-              <h3 className="text-3xl font-bold text-primary mb-2">25+</h3>
-              <p className="text-muted-foreground">Countries Reached</p>
+            <div className="text-center animate-scale-in group hover:scale-105 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8 text-primary-foreground" />
+              </div>
+              <h3 ref={countriesCount.ref} className="text-3xl font-bold text-primary mb-2 font-sf-pro">
+                {countriesCount.count}+
+              </h3>
+              <p className="text-muted-foreground font-medium">Countries Reached</p>
             </div>
           </div>
         </div>
