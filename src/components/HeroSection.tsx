@@ -19,7 +19,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 z-10 text-center">
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight">
-            Advancing 
+            Advancing Healthcare
             <span className="block text-accent-light">Through Science</span>
           </h1>
           
