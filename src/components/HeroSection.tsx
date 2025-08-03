@@ -4,7 +4,7 @@ import heroLab from "@/assets/hero-lab.jpg";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 sm:pt-20">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -16,19 +16,19 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 z-10 text-center">
-        <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
+      <div className="container mx-auto px-4 z-10 text-center py-8">
+        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 animate-fade-in">
           <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight">
             Advancing 
             <span className="block text-accent-light">Through Science</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed px-4">
             Biocryst Pharma is dedicated to developing cutting-edge pharmaceutical solutions 
             that improve lives and transform healthcare worldwide.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 sm:mt-12">
             <Button 
               size="lg" 
               className="bg-accent hover:bg-accent-light text-accent-foreground px-8 py-6 text-lg font-semibold shadow-floating transition-bounce group"
@@ -48,7 +48,7 @@ const HeroSection = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-primary-foreground/20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 pt-8 sm:pt-16 border-t border-primary-foreground/20">
             <div className="text-center space-y-2 animate-scale-in">
               <Shield className="h-8 w-8 text-accent-light mx-auto" />
               <h3 className="text-2xl font-bold text-primary-foreground">25+ Years</h3>
