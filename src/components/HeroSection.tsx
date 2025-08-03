@@ -39,9 +39,8 @@ const HeroSection = () => {
             </Button>
             
             <Button 
-              variant="outline" 
               size="lg"
-              className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-6 text-lg font-semibold transition-bounce"
+              className="bg-accent hover:bg-accent-light text-accent-foreground px-8 py-6 text-lg font-semibold shadow-floating transition-bounce"
               onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Learn More
