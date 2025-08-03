@@ -1,25 +1,37 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Products", href: "#products" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "Why Choose Us", href: "#why-choose" },
-    { label: "Distributor Inquiry", href: "#distributor" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/", type: "page" },
+    { label: "About", href: "/about", type: "page" },
+    { label: "Products", href: "#products", type: "section" },
+    { label: "Testimonials", href: "#testimonials", type: "section" },
+    { label: "Why Choose Us", href: "#why-choose", type: "section" },
+    { label: "Distributor Inquiry", href: "#distributor", type: "section" },
+    { label: "FAQ", href: "#faq", type: "section" },
+    { label: "Contact", href: "#contact", type: "section" },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const handleNavigation = (href: string, type: string) => {
+    if (type === "page") {
+      navigate(href);
+    } else {
+      // If we're not on the home page, navigate to home first
+      if (location.pathname !== "/") {
+        navigate("/" + href);
+      } else {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
     }
     setIsOpen(false);
   };
@@ -43,7 +55,7 @@ const Navigation = () => {
                 key={item.label}
                 variant="ghost"
                 className="text-foreground hover:text-primary hover:bg-primary/10 transition-smooth"
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleNavigation(item.href, item.type)}
               >
                 {item.label}
               </Button>
@@ -72,7 +84,7 @@ const Navigation = () => {
                   key={item.label}
                   variant="ghost"
                   className="w-full justify-start text-foreground hover:text-primary hover:bg-primary/10"
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => handleNavigation(item.href, item.type)}
                 >
                   {item.label}
                 </Button>
