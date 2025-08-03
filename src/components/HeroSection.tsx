@@ -18,12 +18,12 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center py-8">
         <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 animate-fade-in">
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary-foreground leading-tight">
             Advancing 
             <span className="block text-accent-light">Through Science</span>
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed px-4">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed px-2">
             Biocryst Pharma is dedicated to developing cutting-edge pharmaceutical solutions 
             that improve lives and transform healthcare worldwide.
           </p>
@@ -31,16 +31,16 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 sm:mt-12">
             <Button 
               size="lg" 
-              className="bg-accent hover:bg-accent-light text-accent-foreground px-8 py-6 text-lg font-semibold shadow-floating transition-bounce group"
+              className="bg-accent hover:bg-accent-light text-accent-foreground px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold shadow-floating transition-bounce group"
               onClick={() => document.querySelector('#products')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Explore Products 
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
             <Button 
               size="lg"
-              className="bg-accent hover:bg-accent-light text-accent-foreground px-8 py-6 text-lg font-semibold shadow-floating transition-bounce"
+              className="bg-accent hover:bg-accent-light text-accent-foreground px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold shadow-floating transition-bounce"
               onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Learn More
